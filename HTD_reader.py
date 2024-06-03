@@ -91,7 +91,7 @@ def open_htd(file_path, well_id, site_no):
 		# Merge images
 		img = Concatenator.run(img, img_temp)
 		
-	new_title = images_to_open[i]["plate_name"] + "_" + well_id + "_" + site_no
+	new_title = images_to_open[i]["plate_name"] + "_" + well_id + "_" + str(site_no)
 	img.setTitle(new_title)
 	IJ.run(img, "Properties...", "channels=" + str(n_channels) + " slices=1 frames=1 pixel_width=1.0000 pixel_height=1.0000 voxel_depth=1.0000");
 	img.show()
